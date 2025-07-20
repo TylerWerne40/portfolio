@@ -45,3 +45,7 @@ def project(slug):
         f"project_{slug}.html",
         project=slug_to_project[slug]
     )
+
+@app.errorhandler(404):
+def fourohfour(error):
+    return render_template("404.html")
